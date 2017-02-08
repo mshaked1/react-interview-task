@@ -1,4 +1,8 @@
-## Install
+## Setup
+
+#### node.js LTS, npm and github are required
+
+`git clone https://github.com/danielpetrov/react-interview-task.git`
 
 `npm install`
 
