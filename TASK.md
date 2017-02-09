@@ -1,7 +1,5 @@
 ## React interview task
 
-## React interview task
-
 Welcome! The goal of this task is to test your skills and also your code style.
 You can to use the provided setup and some of the development stack that comes with it,
 but else feel free to create your own implementation. This skeleton is only meant to save time setting up your own project.
