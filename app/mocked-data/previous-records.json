@@ -1,0 +1,100 @@
+[
+  {
+    "name": "SNG",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "JPMorgan Chase Bank, Singapore Branch"
+  },
+  {
+    "name": "CHI",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "Sucursal en Chile"
+  },
+  {
+    "name": "JER",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "Jersey"
+  },
+  {
+    "name": "SAO",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "Banco JP Morgan SA, Sao Paulo"
+  },
+  {
+    "name": "TPC",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "Third Party Custody"
+  },
+  {
+    "name": "FRA",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "JPMIB Frankfurt Branch"
+  },
+  {
+    "name": "NYC",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "JPMorgan Chase Bank, N.A."
+  },
+  {
+    "name": "MEX",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "Banco-Institucion d Banca Mult"
+  },
+  {
+    "name": "HKG",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "J.P. Morgan Saudi Arabia Ltd"
+  },
+  {
+    "name": "CDG",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "JPMorgan Chase Bank, Paris Branch",
+    "updEmployeeSid": null,
+    "updTs": 1484330213000
+  },
+  {
+    "name": "LON",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "JPMIB London Branch"
+  },
+  {
+    "name": "JSY",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "IFS Jersey"
+  },
+  {
+    "name": "USA",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "Wealth Mgmt",
+  },
+  {
+    "name": "GVA",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "J.P. Morgan (Suisse) SA"
+  },
+  {
+    "name": "JIB",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "JPM International Bank"
+  },
+  {
+    "name": "MIL",
+    "floor": "1",
+    "date": 1484330213000,
+    "nickName": "JPMIB Milan Branch"
+  }
+]

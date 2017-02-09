@@ -8,6 +8,7 @@ const app = express()
 const port = 3000
 const config = require('./webpack.dev.config.js')
 const compiler = webpack(config)
+const previousRecords = require('mocked-data/previous-records.json')
 
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))
@@ -20,6 +21,18 @@ app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*')
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
     next()
+})
+
+app.get('/fetchPreviousRecords', function (req, res) {
+    try {
+        res.set('Content-Type', 'application/json')
+
+        setTimeout(() => {
+            res.json(previousRecords)
+        }, 500)
+    } catch (e) {
+        res.status(500).send(e.stack)
+    }
 })
 
 app.use('/*', function (req, res) {

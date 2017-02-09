@@ -12,12 +12,9 @@ const BASE_URL = process.env.API_URL
 
 const servicesDesc = [
     {
-        name: 'SAMPLE_SERVICE',
-        url: `${BASE_URL}/restSampleService`,
-        method: 'POST'
-    },
-    {
-        name: 'SAMPLE_SERVICE_ENDPOINT'
+        name: 'FETCH_PREVIOUS_RECORDS',
+        url: `${BASE_URL}/fetchPreviousRecords`,
+        method: 'GET'
     }
 ].map(service => R.merge(service, defaults))
 
@@ -63,5 +60,4 @@ const services = servicesDesc.reduce((acc, service) => {
     return acc
 }, {})
 
-export const sampleService = services['SAMPLE_SERVICE'] // has already defined url and method
-export const sampleServiceEndPoint = services['SAMPLE_SERVICE_ENDPOINT'] // expects url and method
+export const fetchPreviousRecords = services['FETCH_PREVIOUS_RECORDS']

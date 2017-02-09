@@ -19,3 +19,5 @@ who can write a work-tracking application to help them sign up for cleaning with
     * remove record (when user clicks this the row will be removed from the table)
 	
 2. Button which when clicked opens up a form. Clicking submit on the form will add a new record to the table.
+
+3. Button which when clicked will fetch records from fetchPreviousRecords service and display them on the table
