@@ -8,7 +8,7 @@ const app = express()
 const port = 3000
 const config = require('./webpack.dev.config.js')
 const compiler = webpack(config)
-const previousRecords = require('mocked-data/previous-records.json')
+const previousRecords = require('./mocked-data/previous-records.json')
 
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))
