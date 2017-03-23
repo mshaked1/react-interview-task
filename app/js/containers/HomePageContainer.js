@@ -7,12 +7,12 @@ import Form from '../components/Form/Form'
 
 class HomePageContainer extends Component {
   render() {
-    const { records, showForm, deleteRecord, fetch } = this.props
+    const { records, showForm, deleteRecord } = this.props
 
     return (
       <div>
         <ButtonContainer />
-        {showForm && <Form fetch={fetch} />}
+        {showForm && <Form />}
         <Table records={records} handleDelete={deleteRecord} />
       </div>
     )
@@ -22,15 +22,13 @@ class HomePageContainer extends Component {
 HomePageContainer.propTypes = {
   records: PropTypes.array,
   showForm: PropTypes.bool.isRequired,
-  deleteRecord: PropTypes.func.isRequired,
-  fetch: PropTypes.bool.isRequired
+  deleteRecord: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => (
   {
     records: state.records,
-    showForm: state.showForm,
-    fetch: state.fetch
+    showForm: state.showForm
   }
 )
 

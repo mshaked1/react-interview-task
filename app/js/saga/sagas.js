@@ -12,7 +12,7 @@ function* callFetchRecords({ fetch }) {
     const records = yield call(Api.fetch)
 
     if (records) {
-      yield put({type: 'GET_RECORDS_DONE', records})
+      yield put({ type: 'GET_RECORDS_DONE', records })
       yield put({ type: 'TOGGLE_FETCH', fetch })
     }
   }
@@ -22,13 +22,12 @@ function* addRecordSaga() {
   yield takeEvery('ADD_RECORD', callAddRecord)
 }
 
-function* callAddRecord({ fetch, name, nickName, floor, resolve, reject }) {
-  const data = yield call(Api.addRecord, {name, nickName, floor})
+function* callAddRecord({ name, nickName, floor, resolve, reject }) {
+  const record = yield call(Api.addRecord, {name, nickName, floor})
 
-  if (data) {
-    yield put({ type: 'ADD_RECORD_DONE', data })
+  if (record) {
+    yield put({ type: 'ADD_RECORD_DONE', record })
     yield put({ type: 'TOGGLE_SUBMIT_FORM' })
-    yield put({ type: 'TOGGLE_FETCH', fetch })
     yield call(resolve)
   } else {
     yield call(reject)

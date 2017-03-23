@@ -46,7 +46,8 @@ app.post('/addRecord', function(req, res) {
       json.push(req.body)
       fs.writeFile(previousRecordsPath, JSON.stringify(json, null, 2), 'utf8', function() {
         res.set('Content-Type', 'application/json')
-        res.sendFile(previousRecordsPath, { root: __dirname })
+        res.json(req.body)
+        // res.sendFile(previousRecordsPath, { root: __dirname })
       })
     })
   } catch (e) {

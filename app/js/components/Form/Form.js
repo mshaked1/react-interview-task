@@ -3,10 +3,12 @@ import { Field, reduxForm, SubmissionError } from 'redux-form'
 import { Input, Button, Message } from 'semantic-ui-react'
 
 class Form extends Component {
+
   nameInput({input, meta: { touched, error }, ...custom}) {
     const hasError = touched && error !== undefined
+
     return (
-      <div  className={'formChildren'}>
+      <div className={'formChildren'}>
         {hasError && 
           <Message
             error
@@ -23,6 +25,7 @@ class Form extends Component {
 
   nickNameInput({input, meta: { touched, error }, ...custom}) {
     const hasError = touched && error !== undefined
+
     return (
       <div className={'formChildren'}>
         {hasError &&
@@ -43,7 +46,7 @@ class Form extends Component {
     const hasError = touched && error !== undefined
 
     return (
-      <div  className={'formChildren'}>
+      <div className={'formChildren'}>
         {hasError &&
         <Message
           error
@@ -58,26 +61,27 @@ class Form extends Component {
     )
   }
 
-  submit({ fetch, name, nickName, floor }, dispatch) {
+  submit({ name, nickName, floor }, dispatch) {
     return new Promise((resolve, reject) => {
       dispatch({
         type: 'ADD_RECORD',
-        fetch,
         name,
         nickName,
         floor,
         resolve,
         reject
       })
+    }).catch((error) => {
+      throw new SubmissionError(error)
     })
   }
 
   render() {
-    const { handleSubmit, fetch } = this.props
+    const { handleSubmit } = this.props
 
     return (
       <form
-        onSubmit={handleSubmit(fetch)}
+        onSubmit={handleSubmit(this.submit.bind(this))}
         className={'form'}>
         <h3 className='formChildren'>Submit Cleaning Record!</h3>
         <Field type='text' name='name' component={this.nameInput} />
@@ -103,8 +107,7 @@ const validate = values => {
 }
 
 Form.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-  fetch: PropTypes.bool.isRequired
+  handleSubmit: PropTypes.func.isRequired
 }
 
 export default reduxForm({
