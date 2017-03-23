@@ -1,19 +1,43 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { NotImplemented } from '../components'
+import { deleteRecordActionCreator } from '../actions/records'
+import { ButtonContainer } from './'
+import { Table } from '../components/Table'
+import Form from '../components/Form/Form'
 
 class HomePageContainer extends Component {
-    render() {
-        return (
-            <NotImplemented fontSize={40} />
-        )
-    }
+  render() {
+    const { records, showForm, deleteRecord, fetch } = this.props
+
+    return (
+      <div>
+        <ButtonContainer />
+        {showForm && <Form fetch={fetch} />}
+        <Table records={records} handleDelete={deleteRecord} />
+      </div>
+    )
+  }
 }
 
-export default connect(
-    state => ({
-    }),
-    dispatch => bindActionCreators({
-    }, dispatch)
-)(HomePageContainer)
+HomePageContainer.propTypes = {
+  records: PropTypes.array,
+  showForm: PropTypes.bool.isRequired,
+  deleteRecord: PropTypes.func.isRequired,
+  fetch: PropTypes.bool.isRequired
+}
+
+const mapStateToProps = state => (
+  {
+    records: state.records,
+    showForm: state.showForm,
+    fetch: state.fetch
+  }
+)
+
+const mapDispatchToProps = dispatch => (
+  {
+    deleteRecord: (id) => dispatch(deleteRecordActionCreator(id))
+  }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePageContainer)

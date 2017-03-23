@@ -5,24 +5,24 @@ import { routingPathnameSelector } from '../reducers'
 import { TopNavigationLinks } from '../components/Navigation'
 
 class TopNavigationContainer extends Component {
-    render() {
-        const { currentPathname } = this.props
+  render() {
+    const { currentPathname } = this.props
 
-        return (
-            <header>
-                <TopNavigationLinks {...{ currentPathname }} />
-            </header>
-        )
-    }
+    return (
+      <header>
+        <TopNavigationLinks {...{ currentPathname }} />
+      </header>
+    )
+  }
 }
 
 TopNavigationContainer.propTypes = {
-    currentPathname: PropTypes.string
+  currentPathname: PropTypes.string
 }
 
 export default connect(
     state => ({
-        currentPathname: routingPathnameSelector(state)
+      currentPathname: routingPathnameSelector(state)
     }),
     dispatch => bindActionCreators({
     }, dispatch)

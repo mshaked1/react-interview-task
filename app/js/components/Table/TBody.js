@@ -1,20 +1,21 @@
-import React, { PureComponent as Component, PropTypes } from 'react'
-import ImmutablePropTypes from 'react-immutable-proptypes'
+import React, { PropTypes } from 'react'
+// import ImmutablePropTypes from 'react-immutable-proptypes'
 import { TRow } from '.'
 
-export class TBody extends Component {
-    render() {
-        const { data, keyMapValue } = this.props
-
-        return (
-            <tbody>
-                {data.map(rowData => <TRow rowData={rowData} key={rowData.get(keyMapValue)} />)}
-            </tbody>
-        )
+export const TBody = ({ records, handleDelete }) => (
+  <tbody>
+    {records && records.map((rowData, index) => 
+      <TRow
+        rowData={rowData}
+        key={index}
+        iKey={index}
+        handleDelete={handleDelete}
+      />)
     }
-}
+  </tbody>
+)
 
 TBody.propTypes = {
-    data: ImmutablePropTypes.list.isRequired,
-    keyMapValue: PropTypes.string.isRequired
+  records: PropTypes.array,
+  handleDelete: PropTypes.func.isRequired
 }

@@ -1,24 +1,16 @@
-import React, { PureComponent, PropTypes } from 'react'
-import classnames from 'classnames'
+import React, { PropTypes } from 'react'
 
-export class TableWrapper extends PureComponent {
-    render() {
-        const { className, children } = this.props
-
-        return (
-            <table
-                className={classnames(
-                    'table',
-                    className
-                )}
-            >
-                {children}
-            </table>
-        )
-    }
-}
+export const TableWrapper = ({ children }) => (
+  <div className={'tableContainer'}>
+    <h1 className={'tableChildren'}>Out of Space OOD Cleaning Schedule</h1>
+    <table
+      className={'tableChildren'}
+    >
+      {children}
+    </table>
+  </div>
+)
 
 TableWrapper.propTypes = {
-    children: PropTypes.any.isRequired,
-    className: PropTypes.string
+  children: PropTypes.any.isRequired
 }

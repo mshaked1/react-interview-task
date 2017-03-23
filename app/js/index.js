@@ -8,10 +8,10 @@ import '../css/index.css'
 const RootComponent = createRoot()
 
 const run = () => {
-    render(
-        <RootComponent />,
-        document.getElementById('app')
-    )
+  render(
+    <RootComponent />,
+    document.getElementById('app')
+  )
 }
 
 window.addEventListener('DOMContentLoaded', run, false)

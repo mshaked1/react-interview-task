@@ -10,11 +10,56 @@ html, body {
     background-color: var(--main-dark-blue-background-color);
 }
 
-.not-found {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.tableContainer {
+    margin: auto;
+    width: 100%
+}
+
+h1 {
+    text-align: center;
+}
+
+.tableChildren {
+    width: 60%;
+    margin: 0 auto;
+}
+
+table {
+    margin: auto;
+    border: 1px solid;
+}
+
+table, th, tr, td{
+    border: 1px solid;
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+.buttonContainer {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.buttonChildren {
+    width: 20%;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.form {
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    border: 1px solid grey;
+    padding: 15px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.formChildren {
+    width: 50%;
+    margin: 5px auto;
 }
 
 .button {
@@ -27,14 +72,6 @@ html, body {
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 10001;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-.hidden {
-    display: none;
 }
 
 .main-wrapper {
@@ -59,12 +96,6 @@ html, body {
 footer {
     position: relative;
     text-align: center;
-}
-
-.alert {
-    text-align: center;
-    font-size: 15px;
-    font-weight: 500;
 }
 
 .btn .spinner {

@@ -21,23 +21,23 @@ export const configureStoreWithBrowserHistory = () => {
 export const defaultStore = configureStoreWithBrowserHistory()
 
 export const createRoot = (store = defaultStore, name = 'Root') => {
-    class Root extends Component {
-        render() {
-            return (
-                <Provider store={store}>
-                    <Router history={browserHistory}>
-                        <Route path={getLink('')} component={App}>
-                            <IndexRedirect to={getLink('home')} />
-                            <Route path={getLink('home')} component={HomePageContainer} />
-                            <Route path='*' component={NotFound} />
-                        </Route>
-                    </Router>
-                </Provider>
-            )
-        }
+  class Root extends Component {
+    render() {
+      return (
+        <Provider store={store}>
+          <Router history={browserHistory}>
+            <Route path={getLink('')} component={App}>
+              <IndexRedirect to={getLink('home')} />
+              <Route path={getLink('home')} component={HomePageContainer} />
+              <Route path='*' component={NotFound} />
+            </Route>
+          </Router>
+        </Provider>
+      )
     }
+  }
 
-    Root.displayName = name
+  Root.displayName = name
 
-    return Root
+  return Root
 }

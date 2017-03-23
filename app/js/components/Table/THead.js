@@ -1,26 +1,12 @@
-import React, { PureComponent as Component, PropTypes } from 'react'
-import { Text } from '..'
+import React from 'react'
 
-export class THead extends Component {
-    render() {
-        const { headerIKeys } = this.props
-
-        return (
-            <thead>
-                <tr>
-                    {
-                        headerIKeys.map(iKey =>
-                            <th key={iKey}>
-                                <Text iKey={iKey} />
-                            </th>
-                        )
-                    }
-                </tr>
-            </thead>
-        )
-    }
-}
-
-THead.propTypes = {
-    headerIKeys: PropTypes.array.isRequired
-}
+export const THead = () => (
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Nick Name</th>
+      <th>Floor</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+)
